@@ -28,5 +28,5 @@ app.use(function(err, req, res, next) {
 
 var port = 4545;
 app.listen(port, function() {
-	console.log('The server is listening and loves you very much.');
+	console.log('The server is listening on port ', port, ' and loves you very much.');
 });
