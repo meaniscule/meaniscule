@@ -3,6 +3,8 @@ var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var runSeq = require('run-sequence');
+var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 
 
 gulp.task('default', function() {
@@ -12,9 +14,9 @@ gulp.task('default', function() {
         runSeq('buildJS');
     });
 
-    // gulp.watch('browser/scss/**', function () {
-    //     runSeq('buildCSS', 'reloadCSS');
-    // });
+    gulp.watch(['./public/app/app.scss', './public/app/**/*.scss'], function () {
+        runSeq('buildCSS');
+    });
 });
 
 gulp.task('build', function() {
@@ -30,8 +32,12 @@ gulp.task('buildJS', function () {
         .pipe(gulp.dest('./public'));
 });
 
-gulp.task('buildCSS', function() {
-  // place code for your default task here
+gulp.task('buildCSS', function () {
+    return gulp.src('./public/app/app.scss')
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(rename('main.css'))
+        .pipe(gulp.dest('./public'));
 });
 
 
