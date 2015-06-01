@@ -7,6 +7,14 @@ var runSeq = require('run-sequence');
 
 gulp.task('default', function() {
 	gulp.start('build');
+
+	gulp.watch(['./public/app/app.js', './public/app/**/*.js'], function () {
+        runSeq('buildJS');
+    });
+
+    // gulp.watch('browser/scss/**', function () {
+    //     runSeq('buildCSS', 'reloadCSS');
+    // });
 });
 
 gulp.task('build', function() {
