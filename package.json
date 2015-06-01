@@ -11,6 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.12.3",
-    "morgan": "^1.5.2"
+    "gulp-concat": "^2.5.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "morgan": "^1.5.2",
+    "run-sequence": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11"
   }
 }
