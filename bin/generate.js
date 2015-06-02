@@ -20,7 +20,7 @@ var renameGitignore = function () {
     return rename(oldPath, newPath);
 };
 
-console.log(chalk.green('Generating a miniscule MEAN stack app, just for you.'));
+console.log(chalk.green('Meaniscule is generating a miniscule MEAN stack app, just for you.'));
 copyFiles().then(renameGitignore).then(function () {
     console.log(chalk.blue('All done. Enjoy!'));
     console.log(chalk.red('Do not forget to'), chalk.yellow('npm install'), 'AND', chalk.green('gulp'));
