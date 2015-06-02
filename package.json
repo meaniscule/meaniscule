@@ -1,25 +1,21 @@
 {
-  "name": "midi-app2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "name": "meaniscule",
+  "version": "0.1.0",
+  "description": "A miniscule MEAN stack app generator.",
+  "main": "index.js",
+  "bin": {
+    "meaniscule": "generate.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.12.3",
-    "gulp-concat": "^2.5.2",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.1",
-    "gulp-sourcemaps": "^1.5.2",
-    "morgan": "^1.5.2",
-    "run-sequence": "^1.1.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashryanbeats/node-basic.git"
   },
-  "devDependencies": {
-    "gulp": "^3.8.11"
-  }
+  "author": "Ash Ryan <ash@ashryanbeats.com> (http://ashryanbeats.com)",
+  "bugs": {
+    "url": "https://github.com/ashryanbeats/node-basic/issues"
+  },
+  "homepage": "https://github.com/ashryanbeats/node-basic"
 }
