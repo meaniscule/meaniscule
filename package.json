@@ -1,8 +1,7 @@
 {
   "name": "meaniscule",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A miniscule MEAN stack app generator.",
-  "main": "index.js",
   "bin": {
     "meaniscule": "bin/meaniscule"
   },
@@ -11,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ashryanbeats/node-basic.git"
+    "url": "https://github.com/ashryanbeats/meaniscule.git"
   },
   "author": "Ash Ryan <ash@ashryanbeats.com> (http://ashryanbeats.com)",
   "bugs": {
-    "url": "https://github.com/ashryanbeats/node-basic/issues"
+    "url": "https://github.com/ashryanbeats/meaniscule/issues"
   },
-  "homepage": "https://github.com/ashryanbeats/node-basic",
+  "homepage": "https://github.com/ashryanbeats/meaniscule",
   "dependencies": {
     "bluebird": "^2.9.27",
     "chalk": "^1.0.0",
