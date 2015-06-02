@@ -20,8 +20,8 @@ var renameGitignore = function () {
     return rename(oldPath, newPath);
 };
 
-console.log(chalk.green('Generating your new, poppin\' fresh application!'));
+console.log(chalk.green('Generating a miniscule MEAN stack app, just for you.'));
 copyFiles().then(renameGitignore).then(function () {
-    console.log(chalk.blue('All done!'));
-    console.log(chalk.red('Do not forget to'), chalk.yellow('npm install'), 'AND', chalk.green('gulp build'));
+    console.log(chalk.blue('All done. Enjoy!'));
+    console.log(chalk.red('Do not forget to'), chalk.yellow('npm install'), 'AND', chalk.green('gulp'));
 });
