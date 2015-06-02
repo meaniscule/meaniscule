@@ -1,1 +1,1 @@
-var app = angular.module('NodeBasic', ['ui.router']);
+var app = angular.module('Meaniscule', ['ui.router']);
