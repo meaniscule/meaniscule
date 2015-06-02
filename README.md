@@ -1,7 +1,34 @@
-# node-basic
-A basic MEAN stack wireframe for quickstart.
+# Meaniscule
+_Meaniscule = miniscule + MEAN stack generator_
 
-After cloning, run:
+Meaniscule is a basic MEAN stack wireframe for quickstarting your ideas.
+
+Meansicule focuses on only providing the bare minimum framework to get you up and running quickly in a MEAN stack environment.
+
+Use it for:
+- mini apps
+- brainstorming/proof-of-concept
+- sandboxing early new features
+
+Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg), which offers a more robust environment with features like auth built right in.
+
+##Installing Meaniscule
+Install Meaniscule globally:
+```
+npm install -g meaniscule
+```
+
+##Generating your Meaniscule app
+The global installation gives you access to the terminal command `meaniscule`:
+```
+mkdir my-app && cd my-app
+meaniscule
+```
+The `meaniscule` command will populate the directory `my-app` with the newly generated app.
+
+
+##Initial building tasks
+After generating the app, run:
 ```
 npm i && bower i
 npm start
