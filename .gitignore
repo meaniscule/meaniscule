@@ -1,2 +1,5 @@
+generated/node_modules
+generated/bower_components
 node_modules
 bower_components
+.DS_Store
