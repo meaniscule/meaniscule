@@ -42,4 +42,4 @@ gulp
 The default gulp process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
 
 ##Contributing
-Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome.
+Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
