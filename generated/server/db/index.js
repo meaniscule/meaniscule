@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var db = mongoose.connect(DATABASE_URI).connection;
 
 // Require your models in here
-require('./models/node_modules');
+require('./models/nodemodule');
 
 var startDbPromise = new Promise(function (resolve, reject) {
     db.on('open', resolve);

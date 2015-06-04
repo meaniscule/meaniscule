@@ -4,30 +4,43 @@ var chalk = require('chalk');
 var express = require('express');
 var app = express();
 
-var routes = require('./routes/');
 var publicPath = path.join(__dirname, '../public');
 var bowerPath = path.join(__dirname, '../bower_components');
 var indexHtmlPath = path.join(__dirname, '../index.html');
 
-app.use(logger('dev'));
+var startApp = function() {
+  app.use(logger('dev'));
 
-app.use(express.static(publicPath));
-app.use(express.static(bowerPath));
-
-app.use('/', routes);
-
-app.use(function(req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
-});
-
-app.use(function(err, req, res, next) {
-	res.sendStatus(err.status || 500);
-
-});
+  app.use(express.static(publicPath));
+  app.use(express.static(bowerPath));
 
 
+  // Routes
+  //// APIs for AJAX
+  //app.use('/api', require('./routes/'));
+
+  //// Index/Home
+  app.use('/', function(req, res, next) {
+    res.sendFile(path.join(__dirname, './app/views/index.html'));
+  });
+
+
+  // Errors
+  //// Not found
+  app.use(function(req, res, next) {
+  	var err = new Error('Not Found');
+  	err.status = 404;
+  	next(err);
+  });
+
+  //// Server issues
+  app.use(function(err, req, res, next) {
+  	res.sendStatus(err.status || 500);
+
+  });
+};
+
+// Start the server
 // Returns a promise from ./db/index.js
 var startDb = require('./db');
 
@@ -41,6 +54,7 @@ var startServer = function() {
 };
 
 startDb
+  .then(startApp)
   .then(startServer)
   .catch(function(err) {
     console.log('Problem starting up!', chalk.red(err.message));

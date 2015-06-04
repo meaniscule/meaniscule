@@ -1,8 +1,7 @@
-'use strict';
-
+//'use strict';
 var mongoose = require('mongoose');
 
-var nodeModuleSchema = new mongoose.Schema({
+var schema = new mongoose.Schema({
   title: {
     type: String
   },
@@ -11,4 +10,4 @@ var nodeModuleSchema = new mongoose.Schema({
   }
 });
 
-mongoose.model('NodeModule', nodeModuleSchema);
+mongoose.model('Nodemodule', schema);
