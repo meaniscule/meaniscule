@@ -4,8 +4,8 @@ var path = require('path');
 var logger = require('morgan');
 var chalk = require('chalk');
 
-var publicPath = path.join(__dirname, '../public');
-var bowerPath = path.join(__dirname, '../bower_components');
+var publicPath = path.join(__dirname, '../../public');
+var bowerPath = path.join(__dirname, '../../bower_components');
 var indexHtmlPath = path.join(__dirname, '../index.html');
 
 var startApp = function() {
@@ -21,7 +21,7 @@ var startApp = function() {
 
   //// Index/Home
   app.use('/', function(req, res, next) {
-    res.sendFile(path.join(__dirname, './app/views/index.html'));
+    res.sendFile(path.join(__dirname, './views/index.html'));
   });
 
 
