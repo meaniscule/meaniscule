@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/meaniscule@2x.png)](http://badge.fury.io/js/meaniscule)
+[![npm version](https://badge.fury.io/js/meaniscule.svg)](http://badge.fury.io/js/meaniscule)
 # Meaniscule
 _Meaniscule = miniscule + MEAN stack generator_
 
