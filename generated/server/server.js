@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var express = require('express');
 var app = express();
 
-var routes = require('./routes');
+var routes = require('./routes/');
 var publicPath = path.join(__dirname, '../public');
 var bowerPath = path.join(__dirname, '../bower_components');
 var indexHtmlPath = path.join(__dirname, '../index.html');
