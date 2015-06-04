@@ -20,6 +20,8 @@
   "dependencies": {
     "bluebird": "^2.9.27",
     "chalk": "^1.0.0",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.4",
     "ncp": "^2.0.0"
   },
   "preferGlobal": "true"
