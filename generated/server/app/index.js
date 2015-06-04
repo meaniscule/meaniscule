@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var logger = require('morgan');
 var chalk = require('chalk');
+var bodyParser = require('body-parser');
 
 var publicPath = path.join(__dirname, '../../public');
 var bowerPath = path.join(__dirname, '../../bower_components');
@@ -10,6 +11,8 @@ var indexHtmlPath = path.join(__dirname, '../index.html');
 
 var startApp = function() {
   app.use(logger('dev'));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
 
   app.use(express.static(publicPath));
   app.use(express.static(bowerPath));

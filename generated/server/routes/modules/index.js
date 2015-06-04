@@ -14,3 +14,13 @@ router.get('/', function (req, res) {
       res.send(nodeModules);
     });
 });
+
+router.post('/', function(req, res, next) {
+  console.log(req.body);
+  
+  NodeModule
+    .create(req.body, function(err, nodeModule){
+      if(err) return next(err);
+      res.send(nodeModule);
+    });
+});
