@@ -7,6 +7,9 @@ var DATABASE_URI = "mongodb://localhost:27017/" + dbName;
 var mongoose = require('mongoose');
 var db = mongoose.connect(DATABASE_URI).connection;
 
+// Require your models in here
+require('./models/nodemodule');
+
 var startDbPromise = new Promise(function (resolve, reject) {
     db.on('open', resolve);
     db.on('error', reject);
