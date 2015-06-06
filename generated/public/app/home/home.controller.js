@@ -1,10 +1,5 @@
 app.controller('HomeController', function($scope, $http) {
   
-  $scope.$on('$stateChangeSuccess', function () {
-    return $http.get('/api/modules/')
-      .then(function(res) {
-        $scope.nodeModules = res.data;
-      });
-  });
+  $scope.msgFromScope = "...And I'm a message from the HomeController scope, just so you know that I work!";
 
 });
