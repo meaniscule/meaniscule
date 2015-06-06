@@ -7,6 +7,7 @@ var NodeModule = mongoose.model('Nodemodule');
 module.exports = router;
 
 router.get('/', function (req, res) {
+  console.log("GET modules/");
   NodeModule
     .find()
     .exec()

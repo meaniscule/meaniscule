@@ -1,0 +1,11 @@
+<section id="modules">
+  <h1>Node Modules</h1>
+
+  I contain these node modules:
+  <ul>
+    <li ng-repeat="module in nodeModules">
+      <a href="{{ module.repoUrl }}">{{ module.title }}</a>
+    </li>
+  </ul>
+  {{ defaultMessage }}
+</section>
