@@ -36,9 +36,13 @@ startDb.then(function() {
     // Create model-compatible objects
     .then(function(repos) {
       return Promise.all(moduleNamesArray.map(function(e, i) {
+
+        // Make url protocols consistent
+        var url = urlCleaner(repos[i]);
+
         return {
           title: e,
-          repoUrl: repos[i]
+          repoUrl: url
         };
       }));
     })
@@ -53,3 +57,21 @@ startDb.then(function() {
       });
     });
 });
+
+function urlCleaner(url) {
+ var start;
+ var protocol;
+ 
+ if (url.indexOf('https') === 0) return url;
+ 
+ if (url.indexOf("://") > 0) {
+    start = url.indexOf("://");
+    protocol = url.slice(0, start);
+    return "https" + url.slice(start);
+ }
+ else {
+    start = url.indexOf(":") + 1;
+    protocol = url.slice(0, start);
+    return "https://" + url.slice(start);
+ }
+}
