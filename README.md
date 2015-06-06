@@ -38,6 +38,7 @@ npm start
 
 In a separate terminal tab, run:
 ```
+gulp seedDB
 gulp
 ```
 
