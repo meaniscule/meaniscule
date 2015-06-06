@@ -16,6 +16,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-run": "^1.6.8",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "mongodb": "^2.0.33",

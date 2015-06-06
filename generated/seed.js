@@ -52,7 +52,7 @@ startDb.then(function() {
         Nodemodule.create(e)
           .then(function(){
             console.log(chalk.green('Database seeded. Goodbye!'));
-            process.exit(1);
+            process.exit(0);
           });
       });
     });
