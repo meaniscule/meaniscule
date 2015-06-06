@@ -26,5 +26,6 @@ copyFiles().then(renameGitignore).then(function () {
     console.log(chalk.yellow('Run the following commands to get set up:'));
     console.log(chalk.white('- [Terminal 1] npm i && bower i'));
     console.log(chalk.white('- [Terminal 1] npm start'));
+    console.log(chalk.white('- [Terminal 2] gulp seedDB'));
     console.log(chalk.white('- [Terminal 2] gulp'));
 });
