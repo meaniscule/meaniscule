@@ -1,11 +1,11 @@
 var gulp = require('gulp');
+var run = require('gulp-run');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
-
 
 gulp.task('default', function() {
 	gulp.start('build');
@@ -21,6 +21,10 @@ gulp.task('default', function() {
 
 gulp.task('build', function() {
 	runSeq(['buildJS', 'buildCSS']);
+});
+
+gulp.task('seedDB', function() {
+    run('node seed.js').exec();
 });
 
 gulp.task('buildJS', function () {
