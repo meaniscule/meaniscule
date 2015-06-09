@@ -9,10 +9,12 @@
     "postinstall": "gulp build"
   },
   "dependencies": {
+    "babel": "^5.5.6",
     "bluebird": "^2.9.27",
     "body-parser": "^1.12.4",
     "chalk": "^1.0.0",
     "express": "^4.12.3",
+    "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
