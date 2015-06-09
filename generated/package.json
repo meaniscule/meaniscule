@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/start.js",
+    "start": "nodemon --watch server server/start.js",
     "postinstall": "gulp build"
   },
   "dependencies": {
