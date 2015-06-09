@@ -7,6 +7,7 @@ var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var mocha = require('gulp-mocha');
+var babel = require('gulp-babel');
 
 
 // Default
@@ -42,6 +43,7 @@ gulp.task('buildJS', function () {
     return gulp.src(['./public/app/app.js', './public/app/**/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
+        .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./public'));
