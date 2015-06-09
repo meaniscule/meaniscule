@@ -3,7 +3,7 @@ var clearDB = require('mocha-mongoose')(dbURI);
 
 var expect = require('chai').expect;
 var Promise = require('bluebird');
-var mongoose = Promise.promisifyAll(require('mongoose'));
+var mongoose = require('mongoose');
 
 require('../../../server/db/models/nodemodule');
 
@@ -24,37 +24,18 @@ describe('Nodemodule model', function () {
   });
 
   describe('Nodemodule creation', function() {
-    var createNodemodule = function() {
-      return Nodemodule.create({ title: "express", repoUrl: "http://github.com/express" });
-    };
 
-    var createBadNodemodule = function() {
-      return Nodemodule.create({ repoUrl: "http://github.com/express" });
-    };
+    it('should create a module in the db', function(done){
 
-    var retrieveNodemodule = function() {
-      return Nodemodule.find().exec();
-    };
-
-    it('should create a module in the db', function(){
-      createNodemodule()
-        .then(retrieveNodemodule())
-        .then(function(moduleArray) {
-          expect(moduleArray[0].to.be.an('object'));
-          expect(moduleArray[0].title.to.equal('express'));
-      });
-    });  
-
-    it('should require a title', function(){
-      createBadNodemodule()
+      Nodemodule.create({ title: "express", repoUrl: "http://github.com/express" })
         .then(function(data) {
-          console.log("DATA", data);
-          retrieveNodemodule();
-        })
-        .then(function(moduleArray) {
-          console.log(moduleArray);
-          //expect(moduleArray.to.be.);
-      });
+          Nodemodule.findById(data).exec()
+            .then(function(data) {
+              expect(data).to.be.a('object');
+              done();
+            })
+            .then(null, done);
+        });
     });  
       
   });
