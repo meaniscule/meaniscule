@@ -21,6 +21,7 @@
     "gulp-run": "^1.6.8",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
+    "lodash": "^3.9.3",
     "mongodb": "^1.0",
     "mongoose": "^4.0.4",
     "morgan": "^1.5.2",
