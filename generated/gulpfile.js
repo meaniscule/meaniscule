@@ -14,15 +14,15 @@ var babel = require('gulp-babel');
 gulp.task('default', function() {
 	gulp.start('build');
 
-	gulp.watch(['./public/app/app.js', './public/app/**/*.js'], function () {
+	gulp.watch(['public/app/app.js', 'public/app/**/*.js'], function () {
         runSeq('buildJS');
     });
 
-    gulp.watch(['./public/app/app.scss', './public/app/**/*.scss'], function () {
+    gulp.watch(['public/app/app.scss', 'public/app/**/*.scss'], function () {
         runSeq('buildCSS');
     });
 
-    gulp.watch(['./tests/server/**/*.js', 'server/**/*.js'], ['testServerJS']);
+    gulp.watch(['tests/server/**/*.js', 'server/**/*.js'], ['testServerJS']);
 
 });
 
