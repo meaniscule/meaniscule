@@ -47,7 +47,7 @@ var startServer = function() {
   var port = 4545;
 
   app.listen(port, function() {
-    console.log('The server is listening on port', chalk.white(port), 'and loves you very much.');
+    console.log('The server is listening on port', chalk.green.bold(port), 'and loves you very much.');
   });
   
 };
