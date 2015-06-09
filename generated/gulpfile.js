@@ -55,6 +55,7 @@ gulp.task('buildCSS', function () {
 
 // Testing
 gulp.task('testServerJS', function() {
-    return gulp.src('./public/app/**/*.js', {read: false})
+    return gulp.src('./tests/server/**/*.js', {read: false})
         .pipe(mocha({reporter: 'spec'}));
 });
+

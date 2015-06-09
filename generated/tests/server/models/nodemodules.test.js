@@ -7,3 +7,12 @@ var mongoose = require('mongoose');
 require('../../../server/db/models/nodemodule');
 
 var Nodemodule = mongoose.model('Nodemodule');
+
+describe('Nodemodule model', function () {
+
+  it('should exist', function () {
+      console.log("hi");
+      expect(Nodemodule).to.be.a('function');
+  });
+
+});
