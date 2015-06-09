@@ -20,6 +20,9 @@ gulp.task('default', function() {
     gulp.watch(['./public/app/app.scss', './public/app/**/*.scss'], function () {
         runSeq('buildCSS');
     });
+
+    gulp.watch(['./tests/server/**/*.js', 'server/**/*.js'], ['testServerJS']);
+
 });
 
 
