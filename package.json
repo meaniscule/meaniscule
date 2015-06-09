@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ashryanbeats/meaniscule",
   "dependencies": {
+    "babel": "^5.5.6",
     "bluebird": "^2.9.27",
     "chalk": "^1.0.0",
     "ncp": "^2.0.0"
