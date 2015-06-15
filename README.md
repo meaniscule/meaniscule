@@ -44,5 +44,55 @@ gulp
 
 The default gulp process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
 
+## File Structure
+```
+.
+├── bower.json
+├── gulpfile.js
+├── node_modules
+├── package.json
+├── public
+│   └── app
+│       ├── app.js
+│       ├── app.scss
+│       ├── home
+│       │   ├── home.controller.js
+│       │   ├── home.html
+│       │   ├── home.scss
+│       │   └── home.state.js
+│       ├── modules
+│       │   ├── modules.controller.js
+│       │   ├── modules.factory.js
+│       │   ├── modules.html
+│       │   ├── modules.scss
+│       │   └── modules.state.js
+│       └── navbar 
+│           ├── navbar.directive.js 
+│           ├── navbar.html
+│           └── navbar.scss
+├── seed.js
+├── server
+│   ├── app
+│   │   ├── index.js
+│   │   └── views
+│   │       └── index.html
+│   ├── db
+│   │   ├── index.js
+│   │   └── models
+│   │       └── nodemodule.js
+│   ├── routes
+│   │   ├── home
+│   │   │   └── index.js
+│   │   ├── index.js
+│   │   └── modules
+│   │       └── index.js
+│   ├── server.js
+│   └── start.js
+└── tests
+    └── server
+            └── models
+                        └── nodemodules.test.js
+```
+
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
