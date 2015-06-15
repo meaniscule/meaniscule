@@ -2,6 +2,7 @@
 // Returns a promise from ./db/index.js
 var startDb = require('./db');
 var app = require('./app');
+var chalk = require('chalk');
 
 startDb
   .then(app.startApp)
