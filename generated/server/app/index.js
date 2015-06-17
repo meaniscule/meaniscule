@@ -23,6 +23,19 @@ var startApp = function() {
   app.use(express.static(nodePath));
   // app.use(express.static(bowerPath));
 
+  /* 
+  Provides a 404 for times when 
+  Credit to `fsg` module for this one!
+  */
+  app.use(function (req, res, next) {
+
+    if (path.extname(req.path).length > 0) {
+      res.status(404).end();
+    } else {
+      next(null);
+    }
+
+  });
 
   // Routes
   //// APIs for AJAX
