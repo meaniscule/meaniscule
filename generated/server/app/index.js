@@ -6,9 +6,13 @@ var chalk = require('chalk');
 var bodyParser = require('body-parser');
 
 var publicPath = path.join(__dirname, '../../public');
-var bowerPath = path.join(__dirname, '../../bower_components');
-var nodePath = path.join(__dirname, '../../node_modules');
 var indexHtmlPath = path.join(__dirname, '../index.html');
+var nodePath = path.join(__dirname, '../../node_modules');
+/* 
+Meaniscule doesn't use Bower by default. To use Bower,
+uncomment the following line and the related `app.use` line below.
+*/
+// var bowerPath = path.join(__dirname, '../../bower_components');
 
 var startApp = function() {
   app.use(logger('dev'));
@@ -16,8 +20,8 @@ var startApp = function() {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.use(express.static(publicPath));
-  app.use(express.static(bowerPath));
   app.use(express.static(nodePath));
+  // app.use(express.static(bowerPath));
 
 
   // Routes
