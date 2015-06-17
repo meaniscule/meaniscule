@@ -1,8 +1,6 @@
 generated/node_modules
-generated/bower_components
 generated/public/main.css
 generated/public/main.js
 node_modules
-bower_components
 .DS_Store
 .idea

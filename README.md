@@ -33,7 +33,7 @@ The `meaniscule` command will populate the directory `my-app` with the newly gen
 ## Initial building tasks
 After generating the app, run:
 ```
-npm i && bower i
+npm install
 npm start
 ````
 
@@ -48,7 +48,6 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ## File Structure
 ```
 .
-├── bower.json
 ├── gulpfile.js
 ├── node_modules
 ├── package.json

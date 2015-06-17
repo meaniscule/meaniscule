@@ -24,8 +24,8 @@ console.log(chalk.green('Meaniscule is generating a miniscule MEAN stack app, ju
 copyFiles().then(renameGitignore).then(function () {
     console.log(chalk.green('All done. Enjoy!'));
     console.log(chalk.yellow('Run the following commands to get set up:'));
-    console.log(chalk.white.bgBlack('- [Terminal 1] npm i && bower i'));
-    console.log(chalk.white.bgBlack('- [Terminal 1] npm start'));
-    console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB'));
-    console.log(chalk.white.bgBlack('- [Terminal 2] gulp'));
+    console.log(chalk.white.bgBlack('- [Terminal 1] npm install '));
+    console.log(chalk.white.bgBlack('- [Terminal 1] npm start   '));
+    console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB '));
+    console.log(chalk.white.bgBlack('- [Terminal 2] gulp        '));
 });
