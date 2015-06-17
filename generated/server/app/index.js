@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var publicPath = path.join(__dirname, '../../public');
 var bowerPath = path.join(__dirname, '../../bower_components');
+var nodePath = path.join(__dirname, '../../node_modules');
 var indexHtmlPath = path.join(__dirname, '../index.html');
 
 var startApp = function() {
@@ -16,6 +17,7 @@ var startApp = function() {
 
   app.use(express.static(publicPath));
   app.use(express.static(bowerPath));
+  app.use(express.static(nodePath));
 
 
   // Routes
