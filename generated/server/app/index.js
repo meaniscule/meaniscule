@@ -14,7 +14,7 @@ uncomment the following line and the related `app.use` line below.
 */
 // var bowerPath = path.join(__dirname, '../../bower_components');
 
-var startApp = function() {
+var initializeRoutes = function() {
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -72,6 +72,6 @@ var startServer = function() {
 };
 
 module.exports = {
-  startApp: startApp,
+  initializeRoutes: initializeRoutes,
   startServer: startServer
 };

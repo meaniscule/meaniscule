@@ -5,7 +5,7 @@ var app = require('./app');
 var chalk = require('chalk');
 
 startDb
-  .then(app.startApp)
+  .then(app.initializeRoutes)
   .then(app.startServer)
   .catch(function(err) {
     console.log('Problem starting up!', chalk.red(err.message));
