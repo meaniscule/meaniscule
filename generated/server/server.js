@@ -1,9 +1,11 @@
-// Start the server
+var chalk = require('chalk');
+
 // Returns a promise from ./db/index.js
 var startDb = require('./db');
 var app = require('./app');
-var chalk = require('chalk');
 
+
+// Start the server
 startDb
   .then(app.initializeRoutes)
   .then(app.startServer)
