@@ -89,3 +89,4 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
 
+[Thanks to all developers who have contributed so far](https://github.com/ashryanbeats/meaniscule/graphs/contributors).
