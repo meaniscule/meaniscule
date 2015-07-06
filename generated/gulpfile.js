@@ -22,7 +22,7 @@ gulp.task('default', function() {
         runSeq('buildCSS');
     });
 
-    gulp.watch(['tests/server/**/*.js', 'server/**/*.js'], ['testServerJS']);
+    gulp.watch(['server/**/*.js'], ['testServerJS']);
 
 });
 
@@ -60,7 +60,7 @@ gulp.task('buildCSS', function () {
 
 // Testing
 gulp.task('testServerJS', function() {
-    return gulp.src('./tests/server/**/*.js', {read: false})
+    return gulp.src('./server/**/*.spec.js', {read: false})
         .pipe(mocha({reporter: 'spec'}));
 });
 

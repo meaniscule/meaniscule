@@ -5,17 +5,15 @@ var expect = require('chai').expect;
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
 
-require('../../../server/db/models/nodemodule');
-
-var Nodemodule = mongoose.model('Nodemodule');
+var Nodemodule = require('./nodemodule.model.js');
 
 describe('Nodemodule model', function () {
-  beforeEach('Connect to db', function (done) {
+  before('Connect to db', function (done) {
     if (mongoose.connection.db) return done();
     mongoose.connect(dbURI, done);
   });
 
-  afterEach('Clear test database', function (done) {
+  after('Clear test database', function (done) {
     clearDB(done);
   });
 

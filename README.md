@@ -48,51 +48,45 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ## File Structure
 ```
 .
+├── config.js
+├── gitignore.txt
 ├── gulpfile.js
-├── node_modules
 ├── package.json
 ├── public
-│   └── app
-│       ├── app.js
-│       ├── app.scss
-│       ├── home
-│       │   ├── home.controller.js
-│       │   ├── home.html
-│       │   ├── home.scss
-│       │   └── home.state.js
-│       ├── modules
-│       │   ├── modules.controller.js
-│       │   ├── modules.factory.js
-│       │   ├── modules.html
-│       │   ├── modules.scss
-│       │   └── modules.state.js
-│       └── navbar 
-│           ├── navbar.directive.js 
-│           ├── navbar.html
-│           └── navbar.scss
-├── seed.js
-├── server
 │   ├── app
-│   │   ├── index.js
-│   │   └── views
-│   │       └── index.html
-│   ├── db
-│   │   ├── index.js
-│   │   └── models
-│   │       └── nodemodule.js
-│   ├── routes
+│   │   ├── app.js
+│   │   ├── app.scss
 │   │   ├── home
-│   │   │   └── index.js
-│   │   ├── index.js
-│   │   └── modules
-│   │       └── index.js
-│   ├── server.js
-│   └── start.js
-└── tests
-    └── server
-            └── models
-                        └── nodemodules.test.js
+│   │   │   ├── home.controller.js
+│   │   │   ├── home.html
+│   │   │   ├── home.scss
+│   │   │   └── home.state.js
+│   │   ├── modules
+│   │   │   ├── modules.controller.js
+│   │   │   ├── modules.factory.js
+│   │   │   ├── modules.html
+│   │   │   ├── modules.scss
+│   │   │   └── modules.state.js
+│   │   └── navbar
+│   │       ├── navbar.directive.js
+│   │       ├── navbar.html
+│   │       └── navbar.scss
+│   ├── main.css
+│   └── main.js
+├── seed.js
+└── server
+    ├── api
+    │   └── modules
+    │       ├── index.js
+    │       ├── nodemodule.controller.js
+    │       ├── nodemodule.model.js
+    │       └── nodemodule.model.spec.js
+    ├── app.js
+    ├── db.js
+    ├── index.html
+    └── start.js
 ```
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
+
