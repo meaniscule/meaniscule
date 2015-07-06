@@ -11,4 +11,7 @@ var schema = new mongoose.Schema({
   }
 });
 
-mongoose.model('Nodemodule', schema);
+var NodeModule = mongoose.model('Nodemodule', schema);
+
+module.exports = NodeModule;
+
