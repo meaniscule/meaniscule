@@ -13,6 +13,9 @@
     "url": "https://github.com/ashryanbeats/meaniscule.git"
   },
   "author": "Ash Ryan <ash@ashryanbeats.com> (http://ashryanbeats.com)",
+  "contributors": [
+    {"name": "Colin Meret", "email":"colinmeret@gmail.com"}
+  ],
   "bugs": {
     "url": "https://github.com/ashryanbeats/meaniscule/issues"
   },
