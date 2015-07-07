@@ -49,7 +49,7 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ```
 .
 ├── client
-│   ├── build           // this directory will be added upon running `gulp` 
+│   ├── build *
 │   │   ├── build.css
 │   │   └── build.js
 │   └── pre-build
@@ -70,7 +70,7 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 │           ├── navbar.directive.js
 │           ├── navbar.html
 │           └── navbar.scss
-├── gitignore.txt
+├── gitignore.txt **
 ├── gulpfile.js
 ├── package.json
 ├── seed.js
@@ -86,6 +86,8 @@ The default gulp process builds all client-side JS and Sass files, and then watc
     ├── index.html
     └── start.js
 ```
+\* The `build` directory and its contents will be created upon running `gulp`  
+\*\* `gitignore.txt` will be renamed to `.gitignore` when the app is first generated
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
