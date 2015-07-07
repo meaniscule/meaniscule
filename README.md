@@ -49,7 +49,7 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ```
 .
 ├── client
-│   ├── build
+│   ├── build           // this directory will be added upon running `gulp` 
 │   │   ├── build.css
 │   │   └── build.js
 │   └── pre-build
