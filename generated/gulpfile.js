@@ -46,7 +46,7 @@ gulp.task('buildJS', function () {
         .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./main'));
 });
 
 gulp.task('buildCSS', function () {
@@ -54,7 +54,7 @@ gulp.task('buildCSS', function () {
         .pipe(plumber())
         .pipe(sass())
         .pipe(rename('main.css'))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./main'));
 });
 
 

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 
 var publicPath = path.join(__dirname, '../public');
+var mainPath = path.join(__dirname, '../main');    // for gulped files
 var indexHtmlPath = path.join(__dirname, './index.html');
 var nodePath = path.join(__dirname, '../node_modules');
 /* 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(publicPath));
+app.use(express.static(mainPath));
 app.use(express.static(nodePath));
 // app.use(express.static(bowerPath));
 
