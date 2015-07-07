@@ -48,30 +48,31 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 ## File Structure
 ```
 .
+├── client
+│   ├── build
+│   │   ├── build.css
+│   │   └── build.js
+│   └── pre-build
+│       ├── app.js
+│       ├── app.scss
+│       ├── home
+│       │   ├── home.controller.js
+│       │   ├── home.html
+│       │   ├── home.scss
+│       │   └── home.state.js
+│       ├── modules
+│       │   ├── modules.controller.js
+│       │   ├── modules.factory.js
+│       │   ├── modules.html
+│       │   ├── modules.scss
+│       │   └── modules.state.js
+│       └── navbar
+│           ├── navbar.directive.js
+│           ├── navbar.html
+│           └── navbar.scss
 ├── gitignore.txt
 ├── gulpfile.js
 ├── package.json
-├── public
-│   ├── app
-│   │   ├── app.js
-│   │   ├── app.scss
-│   │   ├── home
-│   │   │   ├── home.controller.js
-│   │   │   ├── home.html
-│   │   │   ├── home.scss
-│   │   │   └── home.state.js
-│   │   ├── modules
-│   │   │   ├── modules.controller.js
-│   │   │   ├── modules.factory.js
-│   │   │   ├── modules.html
-│   │   │   ├── modules.scss
-│   │   │   └── modules.state.js
-│   │   └── navbar
-│   │       ├── navbar.directive.js
-│   │       ├── navbar.html
-│   │       └── navbar.scss
-│   ├── main.css
-│   └── main.js
 ├── seed.js
 └── server
     ├── api
