@@ -1,7 +1,7 @@
 app.config(function ($stateProvider) {
     $stateProvider.state('modules', {
         url: '/modules',
-        templateUrl: '/app/modules/modules.html',
+        templateUrl: '/pre-build/modules/modules.html',
         controller: 'ModulesController'
     });
 });
