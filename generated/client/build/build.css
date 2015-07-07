@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box; }
+
+.navbar {
+  border-radius: 0; }
+
+#home blockquote {
+  font-size: 14px;
+  font-style: italic; }
+
+#modules ul {
+  list-style: none;
+  padding-left: 0; }
