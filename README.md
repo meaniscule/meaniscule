@@ -46,6 +46,15 @@ gulp
 The default gulp process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
 
 ## File Structure
+At the highest level, Meaniscule files are divided into `client` and `server` directories. 
+
+The contents of both of these directories are fractal: 
+- On the client side, Meaniscule groups front-end components by directories in `/client/pre-build`.  
+ - In these directories, include all related HTML, Sass, and Angular JavaScript (controllers, states, factories, and directives) 
+- On the server side, Meaniscule groups APIs by directories in `/server/api`.  
+ - In these directories, include all routes, controller functions, models, and test specs.
+
+### Tree
 ```
 .
 ├── client
@@ -90,6 +99,8 @@ The default gulp process builds all client-side JS and Sass files, and then watc
 \*\* `gitignore.txt` will be renamed to `.gitignore` when the app is first generated
 
 ## Contributing
-Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues).
+Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
+
+Please do keep in mind that Meaniscule aims to keep a fairly small footprint. If you have an idea that will require adding a lot of new code or features, it might not be right for Meaniscule. Feel free to get in touch before you get started on new features.
 
 [Thanks to all developers who have contributed so far](https://github.com/ashryanbeats/meaniscule/graphs/contributors).
