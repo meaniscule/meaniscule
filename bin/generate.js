@@ -5,8 +5,7 @@ var ncp = Promise.promisify(require('ncp').ncp);
 var rename = Promise.promisify(require('fs').rename);
 var fs = Promise.promisifyAll(require('fs'));
 var finder = require('fs-finder');
-
-console.log(process.argv);
+var exec = require('child_process').exec;
 
 ncp.limit = 16;
 
@@ -15,26 +14,41 @@ var generatorFilesPath = path.join(__dirname, '../generated');
 
 // rename files
 // make a promise
-var noDb = process.argv[2] === "-nodb";
+var noDb = process.argv[2] === "nodb";
 
-var renameDbFiles = function() {
-    if (noDb) {
-        var paths = finder.from(generatorFilesPath).findFiles('*.nodb*');
-        console.log(paths);
-        var newPaths = [];
+var renameNoDbFiles = function renameNoDbFiles() {
+  var paths = finder.from(newProjectDir).findFiles('*.nodb*');
+  var newPaths = [];
 
-        for (var i = 0; i < paths.length; i++) {
-            var oldPath = paths[i];
-            var targetString = '.nodb';
-            var startPos = oldPath.indexOf(targetString);
-            var newPath = oldPath.slice(0, startPos) + oldPath.slice(startPos + targetString.length);
-            newPaths.push(rename(oldPath, newPath));
-        }
+  for (var i = 0; i < paths.length; i++) {
+      var oldPath = paths[i];
+      var targetString = '.nodb';
+      var startPos = oldPath.indexOf(targetString);
+      var newPath = oldPath.slice(0, startPos) + oldPath.slice(startPos + targetString.length);
+      newPaths.push(rename(oldPath, newPath));
+  }
 
-        return Promise.all(newPaths);
-    }
-    else return new Promise(function() {return;});
+  return Promise.all(newPaths);
 }
+
+var removeDbFiles = function removeDbFiles() {
+  return new Promise(function(resolve, reject) {
+    exec('rm -r ./client/pre-build/modules/ ./seed.js ./server/api/ ./server/db.js', function(error, stdout, stderr) {
+      if(error) return reject(stderr); 
+      else return resolve(stdout);
+    }); 
+  });
+};
+
+var removeNoDbFiles = function removeNoDbFiles() {
+  return new Promise(function(resolve, reject) {
+    exec('find . -type f -name "*.nodb*" -delete', function(error, stdout, stderr) {
+      if(error) return reject(stderr); 
+      else return resolve(stdout);
+    }); 
+  });
+  
+};
 
 var copyFiles = function () {
     return ncp(generatorFilesPath, newProjectDir);
@@ -48,12 +62,27 @@ var renameGitignore = function () {
 
 
 console.log(chalk.green('Meaniscule is generating a miniscule MEAN stack app, just for you.'));
-renameDbFiles().then(copyFiles).then(renameGitignore).then(function () {
+(new Promise(function(resolve, reject) {
+  if(noDb) {
+    return copyFiles()
+    .then(renameNoDbFiles)
+    .then(removeDbFiles)
+    .then(renameGitignore)
+    .then(resolve);
+  }
+  else {
+    return copyFiles()
+    .then(removeNoDbFiles)
+    .then(renameGitignore)
+    .then(resolve);
+  }
+}))
+.then(function () {
     console.log(chalk.green('All done. Enjoy!'));
     console.log(chalk.yellow('Run the following commands to get set up:'));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm install '));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm start   '));
-    console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB '));
+    if(!noDb) console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB '));
     console.log(chalk.white.bgBlack('- [Terminal 2] gulp        '));
 })
 .catch(function(err) {
