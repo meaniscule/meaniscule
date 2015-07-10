@@ -14,7 +14,10 @@
   },
   "author": "Ash Ryan <ash@ashryanbeats.com> (http://ashryanbeats.com)",
   "contributors": [
-    {"name": "Colin Meret", "email":"colinmeret@gmail.com"}
+    {
+      "name": "Colin Meret",
+      "email": "colinmeret@gmail.com"
+    }
   ],
   "bugs": {
     "url": "https://github.com/ashryanbeats/meaniscule/issues"
@@ -23,6 +26,7 @@
   "dependencies": {
     "bluebird": "^2.9.27",
     "chalk": "^1.0.0",
+    "fs-finder": "^1.8.0",
     "ncp": "^2.0.0"
   },
   "preferGlobal": "true"
