@@ -151,11 +151,11 @@ The server port is set in a varible called `port` in `start.js`.
 The name "Meaniscule" is referenced in the following files:
 - `package.json` (app name and description)
 - `server/db.js` (`dbName`)
-- `/server/index.html` (in the `<title>` and `<body>`)
-- `/server/api/modules/nodemodule.model.spec.js` (`dbURI`)
+- `server/index.html` (in the `<title>` and `<body>`)
+- `server/api/modules/nodemodule.model.spec.js` (`dbURI`)
 - `client/pre-build/app.js` (Angular module name)
-- `/client/pre-build/home/home.html` (in the `<h1>`)
-- `/client/pre-build/navbar/navbar.html` (`.navbar-brand`)
+- `client/pre-build/home/home.html` (in the `<h1>`)
+- `client/pre-build/navbar/navbar.html` (`.navbar-brand`)
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
