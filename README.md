@@ -136,13 +136,13 @@ The contents of both of these directories are fractal:
 ### Removing example files
 Many of the files in the generated Meaniscule app are there as an example of how to construct your new app. 
 
-You can remove the following files if you don't need them:
+You can remove the following directories if you don't need them:
 - `client/pre-build/home`
 - `client/pre-build/modules`
 - `client/pre-build/navbar`
 - `server/api/modules`
 
-Before you remove these files, be sure to note thier organization and naming conventions, as Meaniscule will expect the same structure.
+*Note:* Before you remove these directories, be sure to note their organization and naming conventions, as Meaniscule will expect the same structure. You may need to refactor other files that reference these directories, but the work should be fairly minimal.
 
 ### Changing the server port
 The server port is set in a varible called `port` in `start.js`.
