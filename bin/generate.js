@@ -33,7 +33,7 @@ var renameNoDbFiles = function renameNoDbFiles() {
 
 var removeDbFiles = function removeDbFiles() {
   return new Promise(function(resolve, reject) {
-    exec('rm -r ./client/pre-build/modules/ ./client/pre-build/app.scss ./seed.js ./server/api/ ./server/db.js', function(error, stdout, stderr) {
+    exec('rm -r ./client/pre-build/modules/ ./seed.js ./server/api/ ./server/db.js', function(error, stdout, stderr) {
       if(error) return reject(stderr); 
       else return resolve(stdout);
     }); 
