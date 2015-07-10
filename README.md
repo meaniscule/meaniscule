@@ -13,6 +13,8 @@ Use it for:
 - brainstorming/proof-of-concept
 - sandboxing early new features
 
+You can see what the generated app looks like at [meaniscule.ashryanbeats.com](http://meaniscule.ashryanbeats.com/).
+
 Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg), which offers a more robust environment with features like auth built right in.
 
 ## Installing Meaniscule
