@@ -1,3 +1,10 @@
+/* 
+This file is just an example of how you might seed your database. 
+
+In this example, the names and URLs of the contents of `/node_modules`
+are stored in the database.
+*/
+
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require('fs'));
 var path = require('path');

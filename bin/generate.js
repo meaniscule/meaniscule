@@ -61,7 +61,9 @@ var renameGitignore = function () {
 };
 
 
-console.log(chalk.green('Meaniscule is generating a miniscule MEAN stack app, just for you.'));
+console.log(chalk.green('Meaniscule is generating your new miniscule MEAN stack app.'));
+console.log(chalk.green('You\'ll be up and running in no time!'));
+
 (new Promise(function(resolve, reject) {
   if(noDb) {
     return copyFiles()
@@ -78,7 +80,7 @@ console.log(chalk.green('Meaniscule is generating a miniscule MEAN stack app, ju
   }
 }))
 .then(function () {
-    console.log(chalk.green('All done. Enjoy!'));
+    console.log(chalk.green('Your app is ready!'));
     console.log(chalk.yellow('Run the following commands to get set up:'));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm install '));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm start   '));

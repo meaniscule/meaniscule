@@ -29,6 +29,12 @@ meaniscule
 ```
 The `meaniscule` command will populate the directory `my-app` with the newly generated app.
 
+Add the `nodb` flag if you want to generate an app without a database:
+```
+mkdir my-app && cd my-app
+meaniscule nodb
+```
+This will save your installation the trouble of connecting to a database if you know you won't need one. It also makes the generated Meaniscule app even smaller by removing files related to the database.
 
 ## Initial building tasks
 After generating the app, run:
@@ -39,11 +45,11 @@ npm start
 
 In a separate terminal tab, run:
 ```
-gulp seedDB
+gulp seedDB // No need for this if you used the `nodb` flag to generate the app
 gulp
 ```
 
-The default gulp process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
+The default `gulp` process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
 
 ## File Structure
 At the highest level, Meaniscule files are divided into `client` and `server` directories. 
@@ -54,7 +60,7 @@ The contents of both of these directories are fractal:
 - On the server side, Meaniscule groups APIs by directories in `/server/api`.  
  - In these directories, include all routes, controller functions, models, and test specs.
 
-### Tree
+### Tree (with database)
 ```
 .
 ├── client
@@ -79,7 +85,7 @@ The contents of both of these directories are fractal:
 │           ├── navbar.directive.js
 │           ├── navbar.html
 │           └── navbar.scss
-├── gitignore.txt **
+├── .gitignore
 ├── gulpfile.js
 ├── package.json
 ├── seed.js
@@ -96,11 +102,64 @@ The contents of both of these directories are fractal:
     └── start.js
 ```
 \* The `build` directory and its contents will be created upon running `gulp`  
-\*\* `gitignore.txt` will be renamed to `.gitignore` when the app is first generated
+
+### Tree (without database, i.e. `nodb`)
+```
+.
+├── client
+│   ├── build *
+│   │   ├── build.css
+│   │   └── build.js
+│   └── pre-build
+│       ├── app.js
+│       ├── app.scss
+│       ├── home
+│       │   ├── home.controller.js
+│       │   ├── home.html
+│       │   ├── home.scss
+│       │   └── home.state.js
+│       └── navbar
+│           ├── navbar.directive.js
+│           ├── navbar.html
+│           └── navbar.scss
+├── .gitignore
+├── gulpfile.js
+├── package.json
+└── server
+    ├── app.js
+    ├── index.html
+    └── start.js
+```
+\* The `build` directory and its contents will be created upon running `gulp`  
+
+## Making Meaniscule yours
+### Removing example files
+Many of the files in the generated Meaniscule app are there as an example of how to construct your new app. 
+
+You can remove the following files if you don't need them:
+- `client/pre-build/home`
+- `client/pre-build/modules`
+- `client/pre-build/navbar`
+- `server/api/modules`
+
+Before you remove these files, be sure to note thier organization and naming conventions, as Meaniscule will expect the same structure.
+
+### Changing the server port
+The server port is set in a varible called `port` in `start.js`.
+
+### References to the name Meaniscule
+The name "Meaniscule" is referenced in the following files:
+- `package.json` (app name and description)
+- `server/db.js` (`dbName`)
+- `/server/index.html` (in the `<title>` and `<body>`)
+- `/server/api/modules/nodemodule.model.spec.js` (`dbURI`)
+- `client/pre-build/app.js` (Angular module name)
+- `/client/pre-build/home/home.html` (in the `<h1>`)
+- `/client/pre-build/navbar/navbar.html` (`.navbar-brand`)
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
 
-Please do keep in mind that Meaniscule aims to keep a fairly small footprint. If you have an idea that will require adding a lot of new code or features, it might not be right for Meaniscule. Feel free to get in touch before you get started on new features.
+Please do keep in mind that Meaniscule aims to keep a fairly small (_miniscule!_) footprint. If you have an idea that will require adding a lot of new code or features, it might not be right for Meaniscule. Feel free to get in touch before you get started on new features.
 
 [Thanks to all developers who have contributed so far](https://github.com/ashryanbeats/meaniscule/graphs/contributors).
