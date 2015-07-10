@@ -1,6 +1,6 @@
 {
   "name": "meaniscule",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A miniscule MEAN stack app generator.",
   "bin": {
     "meaniscule": "bin/meaniscule"
