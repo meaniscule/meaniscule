@@ -9,7 +9,7 @@ Meaniscule is a basic MEAN stack wireframe for quickstarting your ideas.
 Meansicule focuses on only providing the bare minimum framework to get you up and running quickly in a MEAN stack environment.
 
 Use it for:
-- mini apps
+- mini apps/hackathons
 - brainstorming/proof-of-concept
 - sandboxing early new features
 
