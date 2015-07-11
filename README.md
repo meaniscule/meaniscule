@@ -62,7 +62,7 @@ The contents of both of these directories are fractal:
 - On the server side, Meaniscule groups APIs by directories in `/server/api`.  
  - In these directories, include all routes, controller functions, models, and test specs.
 
-### Tree (with database)
+### Tree (with database, i.e. `meaniscule`)
 ```
 .
 ├── client
@@ -105,7 +105,7 @@ The contents of both of these directories are fractal:
 ```
 \* The `build` directory and its contents will be created upon running `gulp`  
 
-### Tree (without database, i.e. `nodb`)
+### Tree (without database, i.e. `meaniscule nodb`)
 ```
 .
 ├── client
