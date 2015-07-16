@@ -17,6 +17,8 @@ You can see what the generated app looks like at [meaniscule.ashryanbeats.com](h
 
 Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg), which offers a more robust environment with features like auth built right in.
 
+*Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! (All you need is Node `fs`.)
+
 ## Installing Meaniscule
 Install Meaniscule globally:
 ```
