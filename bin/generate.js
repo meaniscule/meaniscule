@@ -64,21 +64,17 @@ var renameGitignore = function () {
 console.log(chalk.green('Meaniscule is generating your new miniscule MEAN stack app.'));
 console.log(chalk.green('You\'ll be up and running in no time!'));
 
-(new Promise(function(resolve, reject) {
+copyFiles()
+.then(function() {
   if(noDb) {
-    return copyFiles()
-    .then(renameNoDbFiles)
-    .then(removeDbFiles)
-    .then(renameGitignore)
-    .then(resolve);
+    return renameNoDbFiles()
+    .then(removeDbFiles);
   }
   else {
-    return copyFiles()
-    .then(removeNoDbFiles)
-    .then(renameGitignore)
-    .then(resolve);
+    return removeNoDbFiles();
   }
-}))
+})
+.then(renameGitignore)
 .then(function () {
     console.log(chalk.green('Your app is ready!'));
     console.log(chalk.yellow('Run the following commands to get set up:'));
@@ -90,3 +86,4 @@ console.log(chalk.green('You\'ll be up and running in no time!'));
 .catch(function(err) {
     console.log(err);
 });
+
