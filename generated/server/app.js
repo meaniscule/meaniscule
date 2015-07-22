@@ -14,7 +14,7 @@ var nodePath = path.join(__dirname, '../node_modules');
 Meaniscule doesn't use Bower by default. To use Bower,
 uncomment the following line and the related `app.use` line below.
 */
-// var bowerPath = path.join(__dirname, '../../bower_components');
+// var bowerPath = path.join(__dirname, '../bower_components');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
