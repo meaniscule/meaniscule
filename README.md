@@ -19,6 +19,15 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
 
 *Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! (All you need is Node `fs`.)
 
+## Contents
+- [Installing Meaniscule](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#installing-meaniscule)
+- [Generating your Meaniscule app](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#generating-your-meaniscule-app)
+- [Initial building tasks](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#initial-building-tasks)
+- [File structure](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#file-structure)
+- [Making Meaniscule yours](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#making-meaniscule-yours)
+- [Examples](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#examples)
+- [Contributing](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#contributing)
+
 ## Installing Meaniscule
 Install Meaniscule globally:
 ```
@@ -160,6 +169,12 @@ The name "Meaniscule" is referenced in the following files:
 - `client/pre-build/app.js` (Angular module name)
 - `client/pre-build/home/home.html` (in the `<h1>`)
 - `client/pre-build/navbar/navbar.html` (`.navbar-brand`)
+
+## Examples
+I'm happy to post links to live sites that use Meaniscule. Get in touch if you have something.
+
+- [The default Meansicule generated app](http://meaniscule.ashryanbeats.com/)
+- [My Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
