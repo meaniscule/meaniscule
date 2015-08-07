@@ -77,9 +77,6 @@ The contents of both of these directories are fractal:
 ```
 .
 ├── client
-│   ├── build *
-│   │   ├── build.css
-│   │   └── build.js
 │   └── pre-build
 │       ├── app.js
 │       ├── app.scss
@@ -98,7 +95,6 @@ The contents of both of these directories are fractal:
 │           ├── navbar.directive.js
 │           ├── navbar.html
 │           └── navbar.scss
-├── .gitignore
 ├── gulpfile.js
 ├── package.json
 ├── seed.js
@@ -111,6 +107,8 @@ The contents of both of these directories are fractal:
     │       └── nodemodule.model.spec.js
     ├── app.js
     ├── db.js
+    ├── images
+    │   └── favicon.ico
     ├── index.html
     └── start.js
 ```
@@ -120,9 +118,6 @@ The contents of both of these directories are fractal:
 ```
 .
 ├── client
-│   ├── build *
-│   │   ├── build.css
-│   │   └── build.js
 │   └── pre-build
 │       ├── app.js
 │       ├── app.scss
@@ -135,11 +130,12 @@ The contents of both of these directories are fractal:
 │           ├── navbar.directive.js
 │           ├── navbar.html
 │           └── navbar.scss
-├── .gitignore
 ├── gulpfile.js
 ├── package.json
 └── server
     ├── app.js
+    ├── images
+    │   └── favicon.ico
     ├── index.html
     └── start.js
 ```
