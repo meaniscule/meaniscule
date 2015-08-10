@@ -20,7 +20,7 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
 *Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! (All you need is Node `fs`.)
 
 ## Contents
-- [Installing Meaniscule](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#installing-meaniscule)
+- [Installing or updating Meaniscule](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#installing-meaniscule)
 - [Generating your Meaniscule app](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#generating-your-meaniscule-app)
 - [Initial building tasks](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#initial-building-tasks)
 - [File structure](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#file-structure)
@@ -28,10 +28,15 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
 - [Examples](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#examples)
 - [Contributing](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#contributing)
 
-## Installing Meaniscule
+## Installing or updating Meaniscule
 Install Meaniscule globally:
 ```
 npm install -g meaniscule
+```
+
+Or if you already have Meaniscule installed:
+```
+npm update -g meaniscule
 ```
 
 ## Generating your Meaniscule app
