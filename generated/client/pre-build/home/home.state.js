@@ -1,4 +1,4 @@
-app.config(function ($stateProvider) {
+app.config(function($stateProvider) {
     $stateProvider.state('home', {
         url: '/',
         templateUrl: '/pre-build/home/home.html',

@@ -5,22 +5,31 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
+var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
 var mocha = require('gulp-mocha');
 var babel = require('gulp-babel');
 
+// Live reload
+gulp.task('reload', function() {
+    livereload.reload();
+})
 
 // Default
 gulp.task('default', function() {
-	gulp.start('build');
+    livereload.listen();
+    gulp.start('build');
 
-	gulp.watch(['client/pre-build/app.js', 'client/pre-build/**/*.js'], function () {
-        runSeq('buildJS');
+    gulp.watch(['client/pre-build/app.js', 'client/pre-build/**/*.js'], function() {
+        runSeq('buildJS', 'reload');
     });
 
-    gulp.watch(['client/pre-build/app.scss', 'client/pre-build/**/*.scss'], function () {
-        runSeq('buildCSS');
+    gulp.watch(['client/pre-build/app.scss', 'client/pre-build/**/*.scss'], function() {
+        runSeq('buildCSS', 'reload');
     });
+
+    // Reload when a template (.html) file changes.
+    gulp.watch(['client/**/*.html', 'server/*.html'], ['reload']);
 
     gulp.watch(['server/**/*.js'], ['testServerJS']);
 
@@ -36,10 +45,10 @@ gulp.task('seedDB', function() {
 // Build tasks
 //// Build all
 gulp.task('build', function() {
-	runSeq(['buildJS', 'buildCSS']);
+    runSeq(['buildJS', 'buildCSS']);
 });
 
-gulp.task('buildJS', function () {
+gulp.task('buildJS', function() {
     return gulp.src(['./client/pre-build/app.js', './client/pre-build/**/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -49,7 +58,7 @@ gulp.task('buildJS', function () {
         .pipe(gulp.dest('./client/build'));
 });
 
-gulp.task('buildCSS', function () {
+gulp.task('buildCSS', function() {
     return gulp.src('./client/pre-build/app.scss')
         .pipe(plumber())
         .pipe(sass())
@@ -60,7 +69,10 @@ gulp.task('buildCSS', function () {
 
 // Testing
 gulp.task('testServerJS', function() {
-    return gulp.src('./server/**/*.spec.js', {read: false})
-        .pipe(mocha({reporter: 'spec'}));
+    return gulp.src('./server/**/*.spec.js', {
+            read: false
+        })
+        .pipe(mocha({
+            reporter: 'spec'
+        }));
 });
-
