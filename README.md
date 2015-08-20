@@ -70,7 +70,18 @@ gulp seedDB // No need for this if you used the `nodb` flag to generate the app
 gulp
 ```
 
-The default `gulp` process builds all client-side JS and Sass files, and then watches them for changes, rebuilding on the fly.
+### About `gulp` in Meaniscule
+[Gulp](http://gulpjs.com/) is tool to automate part of our workflow. When you type `gulp` in the terminal while inside your Meaniscule app, Gulp will:
+- build all client-side JS
+- compile all Sass files into CSS
+- watch all client-side JS and CSS files for changes and rebuild on the fly when there are changes
+- run your tests
+- (optionally) live-reload your browser when you make client-side changes (no more manual refreshes!)
+
+### About LiveReload
+You must have the [LiveReload Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) for live reload to work. 
+
+Make sure you **activate** the LiveReload extension each time you start coding, or live reloading won't happen. The LiveReload extension's icon makes it a bit hard to spot if it's running or not, so be sure to double-check.
 
 ## File Structure
 At the highest level, Meaniscule files are divided into `client` and `server` directories. 
