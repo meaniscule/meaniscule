@@ -17,7 +17,7 @@ You can see what the generated app looks like at [meaniscule.ashryanbeats.com](h
 
 Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg), which offers a more robust environment with features like auth built right in.
 
-*Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! (All you need is Node `fs`.)
+*Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! All you need is Node `fs` (and love).
 
 ## Contents
 - [Installing or updating Meaniscule](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#installing-meaniscule)
@@ -27,6 +27,9 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
 - [Making Meaniscule yours](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#making-meaniscule-yours)
 - [Examples](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#examples)
 - [Contributing](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#contributing)
+- [Further reading](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#further-reading)
+  - Digital Ocean Deployer 
+  - Avoiding mojibake with Angular Translate
 
 ## Installing or updating Meaniscule
 Install Meaniscule globally:
@@ -183,3 +186,9 @@ Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) a
 Please do keep in mind that Meaniscule aims to keep a fairly small (_miniscule!_) footprint. If you have an idea that will require adding a lot of new code or features, it might not be right for Meaniscule. Feel free to get in touch before you get started on new features.
 
 [Thanks to all developers who have contributed so far](https://github.com/ashryanbeats/meaniscule/graphs/contributors).
+
+## Further reading
+[Digital Ocean Deployer](https://github.com/meaniscule/digital-ocean-deployer): A script that greatly simplifies deploying a Meaniscule site to Digital Ocean. I hope you love it.
+
+[Avoiding mojibake with Angular Translate](http://ashryanbeats.com/avoiding-mojibake-with-angular-translate/): Advice on how to avoid mojibake in non-European languages when using `angular-translate`. Links to the Meaniscule demo site repo as an example.
+
