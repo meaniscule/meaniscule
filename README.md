@@ -188,7 +188,11 @@ The name "Meaniscule" is referenced in the following files:
 ## Examples
 I'm happy to post links to live sites that use Meaniscule. Get in touch if you have something.
 
-- [The default Meansicule generated app](http://meaniscule.ashryanbeats.com/)
+Sweet examples by 3rd party developers:
+- [Evox: An Interactive Life Simulator in 3D](http://evox.life/)
+
+Basic examples by Ash:
+- [The Meaniscule demo site](http://meaniscule.ashryanbeats.com/)
 - [My Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
 
 ## Contributing
