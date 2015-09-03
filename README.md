@@ -194,7 +194,7 @@ Sweet examples by 3rd party developers:
 
 Basic examples by Ash:
 - [The Meaniscule demo site](http://meaniscule.ashryanbeats.com/)
-- [My Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
+- [Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
