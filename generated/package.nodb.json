@@ -17,6 +17,7 @@
     "bootstrap": "^3.3.5",
     "chalk": "^1.0.0",
     "express": "^4.12.3",
+    "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-plumber": "^1.0.1",
@@ -32,7 +33,6 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "gulp": "^3.8.11",
     "gulp-livereload": "^3.8.0",
     "gulp-mocha": "^2.1.1"
   }
