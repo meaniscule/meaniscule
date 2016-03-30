@@ -46,19 +46,18 @@ var removeDbFiles = function removeDbFiles() {
             cmd doesn't seem to like it when we delete without confirming, so /q says 'quiet mode'. In other words, delete without confirm.
             /s says delete whole tree (this folder and its contents)
             note BACKslash, not forward!
-            If you're wondering "why the multiple nested callback hell thingies?",
+            If you're wondering "why the loops?",
             A) congrats, you don't suck @ programming, and 
             B), Windows' rd (remove directory) command apparently does not allow deleting of multiple, independent loops. 
             So instead, we delete each folder on its own. 
             */
-            exec('rd /s /q .\client\pre-build\modules', function(error, stdout, stderr) {
-                if (error) return reject(stderr);
-                exec('del /q seed.js .\server\db.js', function(error, stdout, stderr) {
-                    if (error) return reject(stderr);
-                    exec('rd .\server\api .\server\db.js', function(error, stdout, stderr) {
-                        console.log(error, stdout, stderr)
-                        if (error) return reject(stderr);
-                        else return resolve(stdout);
+            exec('rd /s /q .\\client\\pre-build\\modules', function(error, stdout, stderr) {
+                if (error) return reject('ERR lvl 1 ' + stderr + ' ' + error);
+                exec('del /q seed.js .\\server\\db.js', function(error, stdout, stderr) {
+                    if (error) return reject('ERR lvl 2' + stderr);
+                    exec('rd /s /q .\\server\\api', function(error, stdout, stderr) {
+                        if (error) return reject('ERR lvl 3' + stderr + error);
+                        return resolve(stdout);
                     });
                 });
             });
@@ -75,10 +74,12 @@ var removeNoDbFiles = function removeNoDbFiles() {
                 else return resolve(stdout);
             });
         } else {
-            //need to find way to do this in Win
-            exec('del /s /q .\*.nodb*', function(error, stdout, stderr) {
-                if (error) return reject(stderr);
-                else return resolve(stdout);
+            exec('del /s /q .\\*.nodb*', function(error, stdout, stderr) {
+                if (error) {
+                    return reject(stderr);
+                } else {
+                    return resolve(stdout);
+                }
             });
         }
     });
@@ -101,21 +102,29 @@ console.log(chalk.green('You\'ll be up and running in no time!'));
 copyFiles()
     .then(function() {
         if (noDb) {
-            return renameNoDbFiles()
-                .then(removeDbFiles);
+            if (isWin) {
+                return renameNoDbFiles().then(removeDbFiles());
+            } else {
+                return renameNoDbFiles()
+                    .then(removeDbFiles);
+            }
         } else {
             return removeNoDbFiles();
         }
     })
     .then(renameGitignore)
     .then(function() {
+        var codeyBits = isWin ? 'Cmd Prompt' : 'Terminal';
         console.log(chalk.green('Your app is ready!'));
         console.log(chalk.yellow('Run the following commands to get set up:'));
-        console.log(chalk.white.bgBlack('- [Terminal 1] npm install '));
-        console.log(chalk.white.bgBlack('- [Terminal 1] npm start   '));
-        if (!noDb) console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB '));
-        console.log(chalk.white.bgBlack('- [Terminal 2] gulp        '));
+        console.log(chalk.white.bgBlack('- [' + codeyBits + ' 1] npm install '));
+        console.log(chalk.white.bgBlack('- [' + codeyBits + ' 1] npm start   '));
+        if (!noDb) console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] gulp seedDB '));
+        console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] gulp'));
     })
     .catch(function(err) {
         console.log(err);
     });
+
+//TO DO: write a way to find files of type '.nodb' and delete, in windooz
+//do any of these happen to be mac-os only?
