@@ -46,7 +46,7 @@ var removeDbFiles = function removeDbFiles() {
             cmd doesn't seem to like it when we delete without confirming, so /q says 'quiet mode'. In other words, delete without confirm.
             /s says delete whole tree (this folder and its contents)
             note BACKslash, not forward!
-            If you're wondering "why the loops?",
+            If you're wondering "why the multiple nested callback hell thingies?",
             A) congrats, you don't suck @ programming, and 
             B), Windows' rd (remove directory) command apparently does not allow deleting of multiple, independent loops. 
             So instead, we delete each folder on its own. 
