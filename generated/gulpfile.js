@@ -1,14 +1,14 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
-var runSeq = require('run-sequence');
-var sass = require('gulp-sass');
-var livereload = require('gulp-livereload');
-var rename = require('gulp-rename');
-var mocha = require('gulp-mocha');
-var babel = require('gulp-babel');
-var exec = require('child_process').exec;
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const runSeq = require('run-sequence');
+const sass = require('gulp-sass');
+const livereload = require('gulp-livereload');
+const rename = require('gulp-rename');
+const mocha = require('gulp-mocha');
+const babel = require('gulp-babel');
+const exec = require('child_process').exec;
 const chalk = require('chalk');
 
 // Live reload
