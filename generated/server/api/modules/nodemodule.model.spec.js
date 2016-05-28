@@ -24,12 +24,13 @@ describe('Nodemodule model', function () {
   describe('Nodemodule creation', function() {
 
     it('should create a module in the db', function(done){
-
       Nodemodule.create({ title: "express", repoUrl: "http://github.com/express" })
         .then(function(data) {
-          Nodemodule.findById(data).exec()
+          Nodemodule.findById(data.id).exec()
             .then(function(data) {
               expect(data).to.be.a('object');
+              expect(data.title).to.equal("express");
+              expect(data.repoUrl).to.equal("http://github.com/express");
               done();
             })
             .then(null, done);
