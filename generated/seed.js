@@ -1,5 +1,5 @@
-/* 
-This file is just an example of how you might seed your database. 
+/*
+This file is just an example of how you might seed your database.
 
 In this example, the names and URLs of the contents of `/node_modules`
 are stored in the database.
@@ -23,7 +23,7 @@ startDb.then(function() {
       moduleNamesArray = moduleNames.filter(function(e) {
         return e !== ".bin";
       });
-      
+
       return Promise.all(moduleNamesArray.map(function(module){
         return fs.readFileAsync(path.join(__dirname, '/node_modules/' + module + '/package.json'), {'encoding': 'utf8'});
       }));
@@ -53,24 +53,25 @@ startDb.then(function() {
         };
       }));
     })
-    // Write to the db and exit
+    // Write to the db
     .then(function(moduleObjects) {
-      moduleObjects.forEach(function(e) {
-        Nodemodule.create(e)
-          .then(function(){
-            console.log(chalk.green('Database seeded. Goodbye!'));
-            process.exit(0);
-          });
-      });
+        return Promise.map(moduleObjects, function(e) {
+            return Nodemodule.create(e)
+        })
+    })
+    // Exit
+    .then(function(){
+      console.log(chalk.green('Database seeded. Goodbye!'));
+      process.exit(0);
     });
 });
 
 function urlCleaner(url) {
  var start;
  var protocol;
- 
+
  if (url.indexOf('https') === 0) return url;
- 
+
  if (url.indexOf("://") > 0) {
     start = url.indexOf("://");
     protocol = url.slice(0, start);
