@@ -1,14 +1,15 @@
-var gulp = require('gulp');
-var run = require('gulp-run');
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
-var runSeq = require('run-sequence');
-var sass = require('gulp-sass');
-var livereload = require('gulp-livereload');
-var rename = require('gulp-rename');
-var mocha = require('gulp-mocha');
-var babel = require('gulp-babel');
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const runSeq = require('run-sequence');
+const sass = require('gulp-sass');
+const livereload = require('gulp-livereload');
+const rename = require('gulp-rename');
+const mocha = require('gulp-mocha');
+const babel = require('gulp-babel');
+const exec = require('child_process').exec;
+const chalk = require('chalk');
 
 // Live reload
 gulp.task('reload', function() {
@@ -37,8 +38,18 @@ gulp.task('default', function() {
 
 
 // Database seed
-gulp.task('seedDB', function() {
-    run('node seed.js').exec();
+gulp.task('seedDB', function(cb) {
+
+    exec('node seed.js', (err, stdout, stderr) => {
+        if (err) {
+            console.error(chalk.red(err));
+            process.exit(err.code);
+        }
+        console.log(chalk.green(stdout));
+        console.log(chalk.red(stderr));
+        process.exit(0);
+    });
+
 });
 
 
