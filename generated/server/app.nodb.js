@@ -24,7 +24,7 @@ Provides a 404 when attemping to access a file
 that wasn't found in one of the static paths above.
 Credit to `fsg` module for this one!
 */
-app.use(function (req, res, next) {
+app.use(function fileNotFound(req, res, next) {
 
   if (path.extname(req.path).length > 0) {
     res.sendStatus(404);
