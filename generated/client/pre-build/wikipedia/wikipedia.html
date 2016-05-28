@@ -6,6 +6,12 @@
   <p ng-if="defaultMessage">{{ defaultMessage }}</p>
 
   <div ng-repeat="(key, value) in articles track by $index">
-		<p><a href="http://en.wikipedia.org/?curid={{ key }}" title="{{ articles[key].title }}">{{ articles[key].title }}</a></p>
+		<p>
+			<a 
+				href="http://en.wikipedia.org/?curid={{ key }}" 
+				title="{{ articles[key].title }}">
+				{{ articles[key].title }}
+			</a>
+		</p>
 	</div>
 </section>
