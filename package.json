@@ -27,7 +27,8 @@
     "bluebird": "^2.9.27",
     "chalk": "^1.0.0",
     "fs-finder": "^1.8.0",
-    "ncp": "^2.0.0"
+    "ncp": "^2.0.0",
+    "request-promise": "^3.0.0"
   },
   "preferGlobal": "true"
 }
