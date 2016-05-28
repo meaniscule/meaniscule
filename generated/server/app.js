@@ -1,12 +1,12 @@
 'use strict';
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var logger = require('morgan');
-var chalk = require('chalk');
-var bodyParser = require('body-parser');
-var fs = require('fs');
+const express = require('express');
+const app = express();
+const path = require('path');
+const logger = require('morgan');
+const chalk = require('chalk');
+const bodyParser = require('body-parser');
+const fs = require('fs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
