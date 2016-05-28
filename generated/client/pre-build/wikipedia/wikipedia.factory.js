@@ -3,8 +3,8 @@ app.factory('WikipediaFactory', function($http) {
 	    getRandomArticles: _getRandomArticles    
     }
 
-  	function _getRandomArticles() {
-	  	return $http.get('/api/wikipedia/random')
+  	function _getRandomArticles(num) {
+	  	return $http.get('/api/wikipedia/random?num=' + num)
 	        .then(function(res) {
 	          	return res.data;
 	        })
