@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var run = require('gulp-run');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
@@ -9,6 +8,8 @@ var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
 var mocha = require('gulp-mocha');
 var babel = require('gulp-babel');
+var exec = require('child_process').exec;
+const chalk = require('chalk');
 
 // Live reload
 gulp.task('reload', function() {
@@ -37,8 +38,18 @@ gulp.task('default', function() {
 
 
 // Database seed
-gulp.task('seedDB', function() {
-    run('node seed.js').exec();
+gulp.task('seedDB', function(cb) {
+
+    exec('node seed.js', (err, stdout, stderr) => {
+        if (err) {
+            console.error(chalk.red(err));
+            process.exit(err.code);
+        }
+        console.log(chalk.green(stdout));
+        console.log(chalk.red(stderr));
+        process.exit(0);
+    });
+
 });
 
 
