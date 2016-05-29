@@ -30,5 +30,6 @@
     "ncp": "^2.0.0",
     "request-promise": "^3.0.0"
   },
-  "preferGlobal": "true"
+  "preferGlobal": "true",
+  "license": "MIT"
 }
