@@ -23,20 +23,18 @@ describe('Wikipedia routes', function() {
 				.get('/api/wikipedia/random')
 				.expect(function(res) {
 					if (Object.keys(res.body).length !== 1) {
-						console.log('here')
-						throw new Error('Not enough articles in response')
+						throw new Error('Not enough articles in response');
 					}
 				})
 				.end(done);
 		});
 
-		it('responds with multiple articles with URL query', function(done) {
+		it('responds with multiple articles when URL query is present', function(done) {
 			request(server)
 				.get('/api/wikipedia/random?num=3')
 				.expect(function(res) {
 					if (Object.keys(res.body).length !== 3) {
-						console.log('here')
-						throw new Error('Not enough articles in response')
+						throw new Error('Not the right number of articles in response');
 					}
 				})
 				.end(done);

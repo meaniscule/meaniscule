@@ -183,6 +183,7 @@ You can remove the following directories if you don't need them:
 - `client/pre-build/modules`
 - `client/pre-build/navbar`
 - `server/api/modules`
+- `server/api/wikipedia`
 
 *Note:* Before you remove these directories, be sure to note their organization and naming conventions, as Meaniscule will expect the same structure. You may need to refactor other files that reference these directories, but the work should be fairly minimal.
 
