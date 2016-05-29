@@ -1,10 +1,10 @@
-var dbURI = 'mongodb://localhost:27017/meaniscule-app-tests';
-var clearDB = require('mocha-mongoose')(dbURI);
+'use strict';
 
-var expect = require('chai').expect;
-var mongoose = require('mongoose');
-
-var Nodemodule = require('./nodemodule.model.js');
+const dbURI = 'mongodb://localhost:27017/meaniscule-app-tests';
+const clearDB = require('mocha-mongoose')(dbURI);
+const expect = require('chai').expect;
+const mongoose = require('mongoose');
+const Nodemodule = require('./nodemodule.model.js');
 
 describe('Nodemodule model', function () {
 
