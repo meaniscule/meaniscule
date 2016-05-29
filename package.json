@@ -31,5 +31,8 @@
     "request-promise": "^3.0.0"
   },
   "preferGlobal": "true",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "supertest": "^1.2.0"
+  }
 }
