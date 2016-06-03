@@ -1,10 +1,12 @@
 app.factory('ModulesFactory', function($http) {
-  return {
-    getNodeModules: function() {
-      return $http.get('/api/modules/')
-        .then(function(res) {
-          return res.data;
-        });    
-    }
-  };
+	return {
+		getNodeModules: _getNodeModules
+	}
+
+    function _getNodeModules() {
+  		return $http.get('/api/modules/')
+    		.then(function(res) {
+      			return res.data;
+    		});    
+  	}
 });

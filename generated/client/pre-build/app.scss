@@ -1,16 +1,17 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 // Add your fractal Sass files below!
 @import 'navbar/navbar';
 @import 'home/home';
 @import 'modules/modules';
+@import 'wikipedia/wikipedia';

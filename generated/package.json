@@ -22,7 +22,6 @@
     "gulp-concat": "^2.5.2",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-run": "^1.6.8",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "jquery": "^2.1.4",
@@ -37,6 +36,7 @@
     "chai": "^3.0.0",
     "gulp-livereload": "^3.8.0",
     "gulp-mocha": "^2.1.1",
-    "mocha-mongoose": "^1.0.4"
+    "mocha-mongoose": "^1.0.4",
+    "supertest": "^1.2.0"
   }
 }

@@ -64,8 +64,8 @@ gulp.task('buildJS', function() {
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(babel({
-			presets: ['es2015']
-		}))
+            presets: ['es2015']
+        }))
         .pipe(concat('build.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./client/build'));

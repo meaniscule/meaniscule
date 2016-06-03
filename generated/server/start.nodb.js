@@ -1,21 +1,23 @@
-// Transpile ES6 to ES5
-require('babel/register');
+'use strict';
 
-var chalk = require('chalk');
-var Promise = require('bluebird');
+const chalk = require('chalk');
+const port = (process.env.PORT || 4545);
 
-var port = (process.env.PORT || 4545);
-// Start the server
-var app = require('./app');
-
-(new Promise(function(resolve, reject) {
-  app.listen(port, function() {
-    console.log('The server is listening on port', chalk.green.bold(port), 'and loves you very much.');
-    return resolve();
-  });
-}))    
-.catch(function(err) {
-  console.log('Problem starting up!', chalk.red(err.message));
-  console.log('I\'m out!');
-  process.kill(1);
+let requireApp = new Promise(function(resolve, reject) {
+	let app = require('./app');
+	resolve(app);
 });
+
+// Start the server
+requireApp
+	.then(function(app) {
+		app.listen(port, function() {
+			console.log('The server is listening on port', chalk.green.bold(port), 'and loves you very much.');
+			console.log('Make sure you are running ' + chalk.white.bgBlack(' gulp ') + ' in another tab!');
+		}); 
+	})
+	.catch(function(err) {
+		console.log('Problem starting up!', chalk.red(err.message));
+		console.log('I\'m out!');
+		process.kill(1);
+	});

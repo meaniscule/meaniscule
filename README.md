@@ -9,6 +9,7 @@ Meaniscule is a basic MEAN stack wireframe for quickstarting your ideas.
 Meansicule focuses on only providing the bare minimum framework to get you up and running quickly in a MEAN stack environment.
 
 Use it for:
+
 - mini apps/hackathons
 - brainstorming/proof-of-concept
 - sandboxing early new features
@@ -20,6 +21,7 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
 *Note:* Meaniscule currently doesn't support non-POSIX systems (e.g. Windows). See [this issue](https://github.com/ashryanbeats/meaniscule/issues/57) for details. If you would like to fix this issue, you are very welcome to submit a pull request! All you need is Node `fs` (and love).
 
 ## Contents
+
 - [Installing or updating Meaniscule](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#installing-meaniscule)
 - [Generating your Meaniscule app](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#generating-your-meaniscule-app)
 - [Initial building tasks](https://github.com/ashryanbeats/meaniscule/blob/master/README.md#initial-building-tasks)
@@ -44,27 +46,33 @@ npm update -g meaniscule
 
 ## Generating your Meaniscule app
 The global installation gives you access to the terminal command `meaniscule`:
+
 ```
 mkdir my-app && cd my-app
 meaniscule
 ```
+
 The `meaniscule` command will populate the directory `my-app` with the newly generated app.
 
 Add the `nodb` flag if you want to generate an app without a database:
+
 ```
 mkdir my-app && cd my-app
 meaniscule nodb
 ```
+
 This will save your installation the trouble of connecting to a database if you know you won't need one. It also makes the generated Meaniscule app even smaller by removing files related to the database.
 
 ## Initial building tasks
 After generating the app, run:
+
 ```
 npm install
 npm start
-````
+```
 
 In a separate terminal tab, run:
+
 ```
 gulp seedDB // No need for this if you used the `nodb` flag to generate the app
 gulp
@@ -72,6 +80,7 @@ gulp
 
 ### About `gulp` in Meaniscule
 [Gulp](http://gulpjs.com/) is tool to automate part of our workflow. When you type `gulp` in the terminal while inside your Meaniscule app, Gulp will:
+
 - build all client-side JS
 - compile all Sass files into CSS
 - watch all client-side JS and CSS files for changes and rebuild on the fly when there are changes
@@ -87,6 +96,7 @@ Make sure you **activate** the LiveReload extension each time you start coding, 
 At the highest level, Meaniscule files are divided into `client` and `server` directories. 
 
 The contents of both of these directories are fractal: 
+
 - On the client side, Meaniscule groups front-end components by directories in `/client/pre-build`.  
  - In these directories, include all related HTML, Sass, and Angular JavaScript (controllers, states, factories, and directives) 
 - On the server side, Meaniscule groups APIs by directories in `/server/api`.  
@@ -131,9 +141,11 @@ The contents of both of these directories are fractal:
     ├── index.html
     └── start.js
 ```
+
 \* The `build` directory and its contents will be created upon running `gulp`  
 
 ### Tree (without database, i.e. `meaniscule nodb`)
+
 ```
 .
 ├── client
@@ -158,6 +170,7 @@ The contents of both of these directories are fractal:
     ├── index.html
     └── start.js
 ```
+
 \* The `build` directory and its contents will be created upon running `gulp`  
 
 ## Making Meaniscule yours
@@ -165,10 +178,12 @@ The contents of both of these directories are fractal:
 Many of the files in the generated Meaniscule app are there as an example of how to construct your new app. 
 
 You can remove the following directories if you don't need them:
+
 - `client/pre-build/home`
 - `client/pre-build/modules`
 - `client/pre-build/navbar`
 - `server/api/modules`
+- `server/api/wikipedia`
 
 *Note:* Before you remove these directories, be sure to note their organization and naming conventions, as Meaniscule will expect the same structure. You may need to refactor other files that reference these directories, but the work should be fairly minimal.
 
@@ -177,6 +192,7 @@ The server port is set in a varible called `port` in `start.js`.
 
 ### References to the name Meaniscule
 The name "Meaniscule" is referenced in the following files:
+
 - `package.json` (app name and description)
 - `server/db.js` (`dbName`)
 - `server/index.html` (in the `<title>` and `<body>`)
@@ -189,10 +205,13 @@ The name "Meaniscule" is referenced in the following files:
 I'm happy to post links to live sites that use Meaniscule. Get in touch if you have something.
 
 Sweet examples by 3rd party developers:
+
 - [Evox: An Interactive Life Simulator in 3D](http://evox.life/)
+- [Pulse](https://pulseplaylist.herokuapp.com/)
 - [Airport Distances](https://airport-distances.herokuapp.com/)
 
 Basic examples by Ash:
+
 - [The Meaniscule demo site](http://meaniscule.ashryanbeats.com/)
 - [Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
 

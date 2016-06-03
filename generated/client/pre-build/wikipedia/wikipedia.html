@@ -1,0 +1,16 @@
+<section id="wikipedia">
+	<h1>Wikipedia</h1>
+	<p>This is a simple example of accessing a third party API.</p>
+  
+	<p ng-if="defaultMessage">{{ defaultMessage }}</p>
+
+	<div ng-repeat="(key, value) in articles track by $index">
+		<p>
+			<a 
+				href="http://en.wikipedia.org/?curid={{ key }}" 
+				title="{{ articles[key].title }}">
+				{{ articles[key].title }}
+			</a>
+		</p>
+	</div>
+</section>
