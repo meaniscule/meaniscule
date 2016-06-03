@@ -42,5 +42,4 @@ describe('Wikipedia routes', function() {
 
 	});
 
-
 });
