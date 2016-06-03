@@ -18,8 +18,7 @@ app.controller('WikipediaController', function($scope, WikipediaFactory) {
 				}
 	  		})
 	  		.catch(function(err) {
-				console.err(err);
+				console.error(err);
 	  		});
   	});
-
 });

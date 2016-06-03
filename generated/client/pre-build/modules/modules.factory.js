@@ -8,6 +8,5 @@ app.factory('ModulesFactory', function($http) {
     		.then(function(res) {
       			return res.data;
     		});    
-		}
-  	};
+  	}
 });
