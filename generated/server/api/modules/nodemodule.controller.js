@@ -2,20 +2,19 @@ var mongoose = require('mongoose');
 var NodeModule = require('./nodemodule.model');
 
 module.exports = {
-  index: function (req, res) {
+  index: function (req, res, next) {
     NodeModule
       .find()
       .exec()
       .then(function(nodeModules) {
         res.send(nodeModules);
       });
- },
- create: function(req, res, next) {
+  },
+  create: function(req, res, next) {
     NodeModule
       .create(req.body, function(err, nodeModule){
         if(err) return next(err);
-        res.send(nodeModule);
+        res.status(201).send(nodeModule);
       });
   } 
 }
-
