@@ -182,6 +182,7 @@ You can remove the following directories if you don't need them:
 - `client/pre-build/home`
 - `client/pre-build/modules`
 - `client/pre-build/navbar`
+- `client/pre-build/wikipedia`
 - `server/api/modules`
 - `server/api/wikipedia`
 
