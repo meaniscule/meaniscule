@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var run = require('gulp-run');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
@@ -33,12 +32,6 @@ gulp.task('default', function() {
 
     gulp.watch(['server/**/*.js'], ['testServerJS']);
 
-});
-
-
-// Database seed
-gulp.task('seedDB', function() {
-    run('node seed.js').exec();
 });
 
 

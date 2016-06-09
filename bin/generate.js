@@ -34,20 +34,20 @@ var renameNoDbFiles = function renameNoDbFiles() {
 var removeDbFiles = function removeDbFiles() {
   return new Promise(function(resolve, reject) {
     exec('rm -r ./client/pre-build/modules/ ./seed.js ./server/api/ ./server/db.js', function(error, stdout, stderr) {
-      if(error) return reject(stderr); 
+      if(error) return reject(stderr);
       else return resolve(stdout);
-    }); 
+    });
   });
 };
 
 var removeNoDbFiles = function removeNoDbFiles() {
   return new Promise(function(resolve, reject) {
     exec('find . -type f -name "*.nodb*" -delete', function(error, stdout, stderr) {
-      if(error) return reject(stderr); 
+      if(error) return reject(stderr);
       else return resolve(stdout);
-    }); 
+    });
   });
-  
+
 };
 
 var copyFiles = function () {
@@ -80,10 +80,9 @@ copyFiles()
     console.log(chalk.yellow('Run the following commands to get set up:'));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm install '));
     console.log(chalk.white.bgBlack('- [Terminal 1] npm start   '));
-    if(!noDb) console.log(chalk.white.bgBlack('- [Terminal 2] gulp seedDB '));
-    console.log(chalk.white.bgBlack('- [Terminal 2] gulp        '));
+    if(!noDb) console.log(chalk.white.bgBlack('- [Terminal 2] npm run seed '));
+    console.log(chalk.white.bgBlack('- [Terminal 2] npm run build       '));
 })
 .catch(function(err) {
     console.log(err);
 });
-
