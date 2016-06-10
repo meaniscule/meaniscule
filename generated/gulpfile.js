@@ -8,8 +8,6 @@ const livereload = require('gulp-livereload');
 const rename = require('gulp-rename');
 const mocha = require('gulp-mocha');
 const babel = require('gulp-babel');
-const exec = require('child_process').exec;
-const chalk = require('chalk');
 
 // Live reload
 gulp.task('reload', function() {
@@ -33,22 +31,6 @@ gulp.task('default', function() {
     gulp.watch(['client/**/*.html', 'server/*.html'], ['reload']);
 
     gulp.watch(['server/**/*.js'], ['testServerJS']);
-
-});
-
-
-// Database seed
-gulp.task('seedDB', function(cb) {
-
-    exec('node seed.js', (err, stdout, stderr) => {
-        if (err) {
-            console.error(chalk.red(err));
-            process.exit(err.code);
-        }
-        console.log(chalk.green(stdout));
-        console.log(chalk.red(stderr));
-        process.exit(0);
-    });
 
 });
 

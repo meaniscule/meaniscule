@@ -17,7 +17,7 @@ var moduleNamesArray;
 
 startDb.then(function() {
   // Get all module names
-  fs.readdirAsync(__dirname + '/node_modules/')
+  return fs.readdirAsync(__dirname + '/node_modules/')
     // Get package.json content for all modules
     .then(function(moduleNames) {
       moduleNamesArray = moduleNames.filter(function(e) {
@@ -64,7 +64,11 @@ startDb.then(function() {
       console.log(chalk.green('Database seeded. Goodbye!'));
       process.exit(0);
     });
-});
+})
+.catch(function(err){
+  console.error(chalk.red(err));
+  process.exit(err.code);
+})
 
 function urlCleaner(url) {
  var start;
