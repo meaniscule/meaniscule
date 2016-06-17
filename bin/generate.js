@@ -119,8 +119,8 @@ copyFiles()
         console.log(chalk.yellow('Run the following commands to get set up:'));
         console.log(chalk.white.bgBlack('- [' + codeyBits + ' 1] npm install '));
         console.log(chalk.white.bgBlack('- [' + codeyBits + ' 1] npm start   '));
-        if (!noDb) console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] gulp seedDB '));
-        console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] gulp'));
+        if (!noDb) console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] npm run seed '));
+        console.log(chalk.white.bgBlack('- [' + codeyBits + ' 2] npm run watch'));
     })
     .catch(function(err) {
         console.log(err);

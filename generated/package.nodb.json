@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Tests should be run from `gulp`. Please see `gulpfile.js` for available testing tasks.\" && exit 1",
     "start": "nodemon --watch server server/start.js",
-    "postinstall": "gulp build"
+    "postinstall": "gulp build",
+    "seed": "node ./seed.js",
+    "watch": "gulp"
   },
   "dependencies": {
     "angular": "^1.4.1",
