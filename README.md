@@ -34,14 +34,9 @@ Meaniscule owes a heavy debt to [`fsg`](https://github.com/FullstackAcademy/fsg)
   - Avoiding mojibake with Angular Translate
 
 ## Installing or updating Meaniscule
-Install Meaniscule globally:
+Install or update Meaniscule globally:
 ```
 npm install -g meaniscule
-```
-
-Or if you already have Meaniscule installed:
-```
-npm update -g meaniscule
 ```
 
 ## Generating your Meaniscule app
