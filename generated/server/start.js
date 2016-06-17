@@ -10,7 +10,7 @@ require('./db')
 	
 		app.listen(port, function() {
 			console.log('The server is listening on port', chalk.green.bold(port), 'and loves you very much.');
-			console.log('Make sure you are running ' + chalk.white.bgBlack(' gulp ') + ' in another tab!');
+			console.log('Make sure you are running ' + chalk.white.bgBlack(' npm run watch ') + ' in another tab!');
 		});
 	})
 	.catch(function(err) {
