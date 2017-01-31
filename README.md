@@ -1,5 +1,4 @@
 [![npm version](https://badge.fury.io/js/meaniscule.svg)](http://badge.fury.io/js/meaniscule)
-![Badge of Honor](https://img.shields.io/badge/Built%20at-Fullstack-green.svg?style=flat-square)
 [![Stories in Ready](https://badge.waffle.io/ashryanbeats/meaniscule.svg?label=ready&title=Ready)](http://waffle.io/ashryanbeats/meaniscule)
 # Meaniscule
 _Meaniscule = miniscule + MEAN stack generator_
@@ -208,8 +207,7 @@ Sweet examples by 3rd party developers:
 
 Basic examples by Ash:
 
-- [The Meaniscule demo site](http://meaniscule.ashryanbeats.com/)
-- [Adobe Creative SDK tutorials](http://creativesdk.ashryanbeats.com/)
+- [The Meaniscule demo site](http://meaniscule.ashryan.io/)
 
 ## Contributing
 Pull requests to [the GitHub repo](https://github.com/ashryanbeats/meaniscule) are welcome, as are new [issues](https://github.com/ashryanbeats/meaniscule/issues). 
